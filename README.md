@@ -1,6 +1,6 @@
 # Intro to Docker and Kubernetes for the interns and newcomers
 
-## Commands used in this intro
+## Docker Commands
 ### Docker run utility container from command line (IMPERATIVE approach)
 
 #### npm init
@@ -14,7 +14,7 @@ docker run -it -v $PWD/app/node_modules:/app/node_modules --workdir /app node-ut
 ```
 
 ### Docker run utility container from command line (DECLARATIVE approach)
-#### Create Dockerfile first then
+#### Create Dockerfile
 ```bash
 touch Dockerfile
 ```
@@ -31,3 +31,7 @@ WORKDIR /app
 docker build -t node-util .
 docker run --name docker-app node-util
 ```
+
+
+## Kubernetes Commands
+# TODO next
