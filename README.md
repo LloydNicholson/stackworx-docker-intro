@@ -32,7 +32,7 @@ docker run \
     npm install
 ```
 
-### Declaritive way
+### Declarative way
 ```bash
 cd utilities && \
 touch Dockerfile
