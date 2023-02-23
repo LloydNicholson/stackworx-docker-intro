@@ -2,8 +2,13 @@
 
 ## Docker Commands
 ### Docker init, install and run from utility container (IMPERATIVE approach)
+---
+#### cd into app directory
+```bash
+cd app
+```
 
-#### npm init
+#### npm init - imperative
 ```bash
 docker run \
     -it \
@@ -15,7 +20,7 @@ docker run \
     npm init
 ```
 
-#### npm install
+#### npm install - imperative
 ```bash
 docker run \
     -it \
@@ -25,6 +30,12 @@ docker run \
     --name node-util \
     node:18-alpine3.16 \
     npm install
+```
+
+### Declaritive way
+```bash
+cd utilities && \
+touch Dockerfile
 ```
 
 #### npm run start
@@ -42,6 +53,13 @@ docker run \
 ```
 
 ### Docker run app using Dockerfile (DECLARATIVE approach)
+---
+
+#### cd into app directory
+```bash
+cd app
+```
+
 #### Create Dockerfile
 ```bash
 touch Dockerfile
