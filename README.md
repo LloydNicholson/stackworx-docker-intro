@@ -5,12 +5,12 @@
 
 #### npm init
 ```bash
-docker run -it -v $PWD/app:/app --workdir /app --name node-util node:18-alpine3.16 npm init
+docker run -it --rm -v $PWD/app:/app --workdir /app --name node-util node:18-alpine3.16 npm init
 ```
 
 #### npm install
 ```bash
-docker run -it -v $PWD/app/node_modules:/app/node_modules --workdir /app node-util npm install
+docker run -it --rm -v $PWD/app:/app --workdir /app --name node-util node:18-alpine3.16 npm install
 ```
 
 ### Docker run utility container from command line (DECLARATIVE approach)
