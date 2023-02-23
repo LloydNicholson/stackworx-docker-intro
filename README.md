@@ -13,6 +13,11 @@ docker run -it --rm -v $PWD:/app --workdir /app --name node-util node:18-alpine3
 docker run -it --rm -v $PWD:/app --workdir /app --name node-util node:18-alpine3.16 npm install
 ```
 
+#### npm run start
+```bash
+docker run -it --rm -v $PWD:/app --workdir /app --name node-util --expose=8081 -p 8081:8081 node:18-alpine3.16 npm run start
+```
+
 ### Docker run utility container from command line (DECLARATIVE approach)
 #### Create Dockerfile
 ```bash
