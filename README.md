@@ -37,6 +37,5 @@ docker build -t node-util .
 docker run --name docker-app node-util
 ```
 
-
 ## Kubernetes Commands
 # TODO next
