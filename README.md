@@ -13,7 +13,7 @@ cd app
 docker run \
     -it \
     --rm \
-    -v $PWD:/app \
+    -v $PWD/app:/app \
     --workdir /app \
     --name node-util \
     node:18-alpine3.16 \
@@ -25,7 +25,7 @@ docker run \
 docker run \
     -it \
     --rm \
-    -v $PWD:/app \
+    -v $PWD/app:/app \
     --workdir /app \
     --name node-util \
     node:18-alpine3.16 \
@@ -43,7 +43,7 @@ touch Dockerfile
 docker run \
     -it \
     --rm \
-    -v $PWD:/app \
+    -v $PWD/app:/app \
     --workdir /app \ 
     --name node-util \ 
     --expose=8081 \
