@@ -20,6 +20,12 @@ const users = [
     profession: "clerk",
     id: 3,
   },
+  {
+    name: "lloyd",
+    password: "password4",
+    profession: "clerk",
+    id: 4,
+  },
 ];
 
 app.get("/listUsers", function (req, res) {

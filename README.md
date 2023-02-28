@@ -1,14 +1,14 @@
 # Intro to Docker and Kubernetes for the interns and newcomers
 
 ## Docker Commands
-### Docker init, install and run from utility container (IMPERATIVE approach)
+### Docker init, install and run from a Utility Container (IMPERATIVE approach)
 ---
 #### cd into app directory
 ```bash
 cd app
 ```
 
-#### npm init - imperative
+#### npm init
 ```bash
 docker run \
     -it \
@@ -20,7 +20,7 @@ docker run \
     npm init
 ```
 
-#### npm install - imperative
+#### npm install
 ```bash
 docker run \
     -it \
@@ -30,12 +30,6 @@ docker run \
     --name node-util \
     node:18-alpine3.16 \
     npm install
-```
-
-### Declarative way
-```bash
-cd utilities && \
-touch Dockerfile
 ```
 
 #### npm run start
@@ -67,16 +61,27 @@ touch Dockerfile
 
 #### Place this inside Dockerfile
 ```bash
-FROM node:18-alpine3.16
+FROM node:18
+
+EXPOSE 8081
 
 WORKDIR /app
+
+COPY package.json .
+
+RUN npm install
+
+COPY . .
+
+VOLUME [ "/app/node_modules" ]
+
+CMD [ "npm" , "start" ]
 ```
 
 #### Then run this command
 ```bash
-docker build -t node-util .
-docker run --name docker-app node-util
+docker build -t node-app .
+docker run -it --rm -v $PWD:/app -v /app/node_modules -p 8081:8081 --name users-app node-app
 ```
 
 ## Kubernetes Commands
-# TODO next
