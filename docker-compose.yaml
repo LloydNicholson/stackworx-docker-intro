@@ -1,0 +1,22 @@
+version: '3'
+services:
+  # install-node:
+  #   build:
+  #     context: ./app
+  #     dockerfile: ../utilities/Dockerfile
+  #   command: init && install
+  #   tty: true
+  #   stdin_open: true
+  node:
+    image: node:18
+    tty: true
+    stdin_open: true
+    working_dir: /app
+    expose:
+      - 8081
+    ports:
+      - '8081:8081'
+    command: npm start
+    volumes:
+      - $PWD/app:/app
+      - /app/node_modules
